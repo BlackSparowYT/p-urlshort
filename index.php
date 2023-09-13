@@ -133,7 +133,7 @@
 
                     ?>
                     <div class="buttons">
-                        <input class="button" type="submit" name="submit">
+                        <input class="button" type="submit" name="submit" value="Generate link">
                         <?php
 
                             if ($_COOKIE['filledin'] == "true" && isset($_COOKIE['last_value'])) {
