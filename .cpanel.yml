@@ -1,6 +1,0 @@
-##### THIS ALLOWS US TO DEPLOY THE SITE FROM A GIT REPO ######
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/blackspa/urlshort.design-atlas.nl/
-    - /bin/cp -R * $DEPLOYPATH
