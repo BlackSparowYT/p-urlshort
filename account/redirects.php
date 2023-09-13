@@ -32,7 +32,7 @@
 
     <body>
 
-        <main class="account-page admin-page">
+        <main class="user-page">
 
             <div class="hero">
                 <div class="hero-text">

@@ -4,7 +4,7 @@
 
 .login-page,
 .register-page,
-.admin-page,
+.user-page,
 .admin-item {
     background-color: var(--primary);
 
@@ -291,7 +291,7 @@
 
 
 
-.admin-page .admin-content {
+.user-page .admin-content {
     background-color: var(--transparent);
     color: var(--black);
     display: flex;
@@ -301,35 +301,46 @@
 
 
 
-.admin-page .admin-content .table-content {
+.user-page .admin-content .table-content {
+    display: block;
     width: 90%;
     max-width: 1050px;
     height: 100%;
 }
 
-.admin-page .admin-content .table-content .table-div > .admin-table {
+.user-page .admin-content .table-content .table-div > .admin-table {
     max-width: 100%;
+    width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
-.admin-page .admin-content .table-div {
+.user-page .admin-content .table-div {
     height: 90%;
 }
 
-.admin-page .admin-content .table-nav {
+.user-page .admin-content .table-nav {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.admin-page .admin-content .table-nav > h2 {
+.user-page .admin-content .table-nav > h2 {
     color: var(--black);
     display: inline-block;
     margin-top: 10px;
 }
 
-.admin-page .admin-content .table-nav #btn-back {
+.user-page .admin-content .table-nav > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-page .admin-content .table-nav #btn-back,
+.user-page .admin-content .table-nav input,
+.user-page .admin-content .table-nav #btn-edit  {
     background-color: white;
     height: fit-content;
     padding: 15px 20px;
@@ -340,62 +351,95 @@
     transition: border .3s;
 }
 
-.admin-page .admin-content .table-nav #btn-back {
+.user-page .admin-content .table-nav #btn-back,
+.user-page .admin-content .table-nav input,
+.user-page .admin-content .table-nav #btn-edit {
     color: var(--black);
     text-decoration: none;
 }
-.admin-page .admin-content .table-nav #btn-back:hover {
+.user-page .admin-content .table-nav #btn-back:hover {
     border: red 1px solid;
     transition: border .3s;
 }
+.user-page .admin-content .table-nav #btn-edit:hover {
+    border: green 1px solid;
+    transition: border .3s;
+}
+.user-page .admin-content .table-nav input {
+    font-size: medium;
+    background-color: var(--accent);
+    height: fit-content;
+    padding: 15px 20px;
+    border: #ede5d5 1px solid;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 20px;
+    transition: border .3s;
+}
 
-.admin-page .admin-content .table-content table {
+.user-page .admin-content .table-nav input:hover {
+    cursor: pointer;
+    border: orange 1px solid;
+}
+
+.user-page .admin-content .table-content table {
     margin: 10px auto;
     overflow: scroll;
 }
 
-.admin-page .admin-content .table-content tr {
+.user-page .admin-content .table-content tr {
     height: min-content;
     width: fit-content;
 }
 
-.admin-page .admin-content .table-content th {
+.user-page .admin-content .table-content th {
     text-align: left;
     padding: 5px;
     border-radius: 5px;
     width: fit-content;
 }
 
-.admin-page .admin-content .table-content td {
+.user-page .admin-content .table-content td {
+    max-width: 400px;
     padding: 5px;
     border-radius: 5px;
     text-align: center;
-    width: fit-content;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.admin-page .admin-content .table-content .shortcode {
+.user-page .admin-content .table-content td p {
+    max-width: 400px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.user-page .admin-content .table-content .shortcode {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    width: 160px;
+    min-width: 160px;
     border-radius: 5px;
 }
 
-.admin-page .admin-content .table-content .shortcode .btn img {
+.user-page .admin-content .table-content .shortcode .btn img {
     height: 20px;
     width: 20px;
     transform: translateY(2px);
 }
 
-.admin-page .admin-content .table-content tr:nth-child(even) {
+.user-page .admin-content .table-content tr:nth-child(even) {
     background-color: var(--primary);
     border: 1px var(--accent) solid;
 }
 
-.admin-page .admin-content .table-content tr:nth-child(even) a { color: var(--accent); }
-.admin-page .admin-content .table-content tr:nth-child(odd) a { color: var(--white); }
+.user-page .admin-content .table-content tr:nth-child(even) a { color: var(--accent); }
+.user-page .admin-content .table-content tr:nth-child(odd) a { color: var(--white); }
 
-.admin-page .admin-content .table-content tr:nth-child(odd) {
+.user-page .admin-content .table-content tr:nth-child(odd) {
     background-color: var(--accent);
     color: var(--white);
     border: 1px var(--primary) solid;
@@ -403,11 +447,46 @@
     margin-left: 100px;
 }
 
-.admin-page .admin-content .table-content tr:nth-child(odd) td,
-.admin-page .admin-content .table-content tr:nth-child(odd) th {
+.user-page .admin-content .table-content tr:nth-child(odd) td,
+.user-page .admin-content .table-content tr:nth-child(odd) th {
     border: 1px var(--transparent) solid;
 }
 
-.admin-page .admin-content .table-content tr:nth-child(even) td {
+.user-page .admin-content .table-content tr:nth-child(even) td {
     border: 1px var(--accent) solid;
+}
+
+
+
+
+
+
+
+
+.redirect-page .admin-content .table-content tr {
+    background-color: var(--primary) !important;
+    border: 1px var(--accent) solid !important;
+}
+
+.redirect-page .admin-content .table-content tr:not(:nth-child(1)) p { color: var(--black) }
+
+.redirect-page .admin-content .table-content tr:nth-child(1) {
+    background-color: var(--accent) !important;
+    color: var(--white) !important;
+    border: 1px var(--primary) solid !important;
+    margin-top: 100px !important;
+    margin-left: 100px !important;
+}
+
+.redirect-page .admin-content .table-content tr:nth-child(1) th {
+    border: 1px var(--transparent) solid !important;
+}
+
+.redirect-page .admin-content .table-content tr td {
+    border: 1px var(--accent) solid !important;
+}
+
+.redirect-page .admin-content .table-content td p {
+    max-width: 400px;
+    white-space: wrap;
 }
