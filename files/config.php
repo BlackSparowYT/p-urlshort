@@ -16,7 +16,7 @@
     }
 
     // Set some settings
-    $site['url'] = 'https://p-urlshort.test/';
+    $site['url'] = 'https://urlshort.design-atlas.nl/';
     $site['name'] = 'URL Shorter';
     $site['description'] = 'Short any url without hassel!';
 
