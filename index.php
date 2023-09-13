@@ -79,8 +79,40 @@
 
         <main>
             <section class="hero">
-                <h1>Dashboard</h1>
+                <h1>URL Shortener</h1>
+
+                <?php 
+
+                if (isset($_SESSION['loggedin'])) {
+                    echo '
+                    <div class="js-dropdown dropdown">
+                        <a class="js-dropbtn dropbtn">
+                            <div class="user-profile">
+                                <img src="' . $path . 'files/icons/unknown-user.png" alt="User Profile">
+                            </div>
+                        </a>
+                        <div class="dropdown-content js-dropContent" data-state="closed">
+                            <a href="' . $path . 'account/">Dashboard</a>
+                            <a href="' . $path . 'account/redirects.php">Your redirects</a>
+                        </div>
+                    </div>';
+                } else {
+                    
+                    echo '
+                    <div class="js-dropdown dropdown">
+                        <a class="dropbtn" href="'.$path.'account/">
+                            <div class="user-profile">
+                                <img src="' . $path . 'files/icons/unknown-user.png" alt="User Profile">
+                            </div>
+                        </a>
+                    </div>';
+                }
+
+                ?>
             </section>
+
+            <?php script('dropdown.js') ?>
+
             <section class="container">
                 <form method="POST">
                     <h2>Input a URL to shorten</h2>

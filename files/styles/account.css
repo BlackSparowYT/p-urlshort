@@ -1,0 +1,413 @@
+/* Account Pages */
+
+/** Pages **/
+
+.login-page,
+.register-page,
+.admin-page,
+.admin-item {
+    background-color: var(--primary);
+
+    background-image: url(images/stacked-waves.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+}
+
+.form .errors {
+    max-width: 90%;
+}
+
+
+
+/*** Account Pages | Content ***/
+
+.account-page .content {
+    min-width: 230px;
+    min-height: 380px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.account-page .content a {
+    width: min-content;
+    height: min-content;
+}
+
+.account-page .content .image-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 500px;
+    min-width: 350px;
+    width: 20%;
+    background-color: var(--accent);
+
+    border-radius: 20px 0 0 20px;
+
+    pointer-events: none;
+}
+
+.account-page .content .image-block img {
+    width: 80%;
+}
+
+
+/*** Account Pages | form ***/
+
+.account-page .form {
+    min-width: 230px;
+    max-width: 370px;
+    height: 500px;
+    width: 25%;
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.account-page .form form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.account-page .form h2 {
+    margin: 10px 0 20px;
+    text-align: center;
+    color: var(--black);
+}
+
+.account-page .form form>div {
+    min-width: 230px;
+    width: 85%;
+}
+
+.account-page .form h4 {
+    margin-bottom: 10px;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-page .form h4 a {
+    color: var(--gray-light) !important;
+    font-size: small;
+    width: fit-content;
+    margin: 0 !important;
+}
+
+.account-page .form input {
+    margin: 0 0 20px;
+    width: calc(100% - 10px);
+    height: 20px;
+    background-color: var(--transparent);
+    border: 1px lightgray solid;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.account-page .form #password,
+.account-page .form #password1,
+.account-page .form #password2,
+.account-page .form #password3 {
+    width: calc(100% - 50px);
+}
+
+.account-page .form #showPass img,
+.account-page .form #showPass1 img,
+.account-page .form #showPass2 img,
+.account-page .form #showPass3 img {
+    box-sizing: border-box;
+    background-color: var(--secondary);
+    position: absolute;
+    margin-left: 5px;
+    height: 32px;
+    width: 32px;
+    padding: 2.5px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    border: 2px solid var(--secondary);
+
+    transition: all .3s;
+}
+
+.account-page .form input:hover,
+.account-page .form input:focus,
+.account-page .form input:focus-visible {
+    transition: all .3s;
+    border: gray 1px solid;
+    outline: 0;
+}
+
+
+.account-page .form button {
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all .3s;
+    border: none;
+}
+
+.account-page .form button:hover {
+    background-color: var(--accent-hover);
+    cursor: pointer;
+}
+
+.account-page .form form div>.link-button {
+    text-align: center;
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--black);
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all .3s;
+    border: none;
+}
+
+.account-page .form form div>.link-button:hover {
+    background-color: var(--accent-hover);
+    cursor: pointer;
+}
+
+.account-page .form form div>button>p {
+    font-size: 13px;
+}
+
+.account-page .form form div>.link-button>p {
+    font-size: 13px;
+}
+
+.account-page .form p {
+    margin: 5px 0;
+    color: var(--black);
+}
+
+.account-page .form form a {
+    margin: 0 0 15px 0;
+    color: var(--blue);
+}
+
+.account-page .form form .link {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account-page .form form .link hr {
+    text-align: center;
+    width: 20%;
+    color: var(--gray-light);
+}
+
+.account-page .form form .link h5 {
+    font-weight: 400;
+    color: var(--gray-light);
+    text-align: center;
+}
+
+
+
+
+
+
+/*** Dash Page | Content ***/
+
+.dash-page {
+    display: block;
+}
+
+.dash-page .dash-content {
+    width: 70%;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+.dash-page .dash-content .flex {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.dash-page .dash-content .flex a {
+    background-color: white;
+    height: fit-content;
+    padding: 15px 20px;
+    border: #ede5d5 1px solid;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    transition: border .3s;
+}
+
+.dash-page .dash-content a:hover {
+    border: green 1px solid;
+    transition: border .3s;
+}
+.dash-page .dash-content #logout:hover {
+    border: red 1px solid;
+    transition: border .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.admin-page .admin-content {
+    background-color: var(--transparent);
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.admin-page .admin-content .table-content {
+    width: 90%;
+    max-width: 1050px;
+    height: 100%;
+}
+
+.admin-page .admin-content .table-content .table-div > .admin-table {
+    max-width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.admin-page .admin-content .table-div {
+    height: 90%;
+}
+
+.admin-page .admin-content .table-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.admin-page .admin-content .table-nav > h2 {
+    color: var(--black);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.admin-page .admin-content .table-nav #btn-back {
+    background-color: white;
+    height: fit-content;
+    padding: 15px 20px;
+    border: #ede5d5 1px solid;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    transition: border .3s;
+}
+
+.admin-page .admin-content .table-nav #btn-back {
+    color: var(--black);
+    text-decoration: none;
+}
+.admin-page .admin-content .table-nav #btn-back:hover {
+    border: red 1px solid;
+    transition: border .3s;
+}
+
+.admin-page .admin-content .table-content table {
+    margin: 10px auto;
+    overflow: scroll;
+}
+
+.admin-page .admin-content .table-content tr {
+    height: min-content;
+    width: fit-content;
+}
+
+.admin-page .admin-content .table-content th {
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.admin-page .admin-content .table-content td {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
+}
+
+.admin-page .admin-content .table-content .shortcode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 160px;
+    border-radius: 5px;
+}
+
+.admin-page .admin-content .table-content .shortcode .btn img {
+    height: 20px;
+    width: 20px;
+    transform: translateY(2px);
+}
+
+.admin-page .admin-content .table-content tr:nth-child(even) {
+    background-color: var(--primary);
+    border: 1px var(--accent) solid;
+}
+
+.admin-page .admin-content .table-content tr:nth-child(even) a { color: var(--accent); }
+.admin-page .admin-content .table-content tr:nth-child(odd) a { color: var(--white); }
+
+.admin-page .admin-content .table-content tr:nth-child(odd) {
+    background-color: var(--accent);
+    color: var(--white);
+    border: 1px var(--primary) solid;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.admin-page .admin-content .table-content tr:nth-child(odd) td,
+.admin-page .admin-content .table-content tr:nth-child(odd) th {
+    border: 1px var(--transparent) solid;
+}
+
+.admin-page .admin-content .table-content tr:nth-child(even) td {
+    border: 1px var(--accent) solid;
+}

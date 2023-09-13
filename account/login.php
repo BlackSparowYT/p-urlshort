@@ -29,7 +29,7 @@
                 $_SESSION['email'] = $email;
                 $_SESSION['loggedin'] = true;
 
-                $stmt = $link->prepare("SELECT admin, name, username, id, disabled, verify FROM users WHERE email = ?");
+                $stmt = $link->prepare("SELECT admin, name, id, disabled, verify FROM users WHERE email = ?");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -59,7 +59,6 @@
 
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['name'] = $row['name'];
-                    $_SESSION['username'] = $row['username'];
                 }
 
                 header("Location: dashboard.php");
@@ -86,8 +85,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300;600;800&display=swap" rel="stylesheet">
 
-        <title>Login || Remote Reizen</title>
-        <?php echo '<link rel="stylesheet" href="'.$path.'files/styles.css">' ?>
+        <?php echo '<title>' . ucfirst($page['name']) . ' | ' . $site['name'] . '</title>' ?>
+        <?php echo '<link rel="stylesheet" href="'.$path.'files/styles/styles.css">' ?>
+        <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
     </head>
 
     <body>

@@ -2,7 +2,7 @@
 
     $page['name'] = "register";
     $page['cat'] = "account";
-    $page['lvl'] = 2;
+    $page['path_lvl'] = 2;
     require_once("../files/components/account-setting.php");
 
     // Check if the user has submitted the registration form
@@ -11,7 +11,6 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $name = $_POST['name'];
-        $username = "#".$_POST['username'];
         
 
         // Generate a random reset token
@@ -47,16 +46,16 @@
         }
 
         // Check if the email already exists
-        $stmt = $link->prepare("SELECT * FROM `users` WHERE email = ? OR username = ?");
-        $stmt->bind_param("ss", $email, $username,);
+        $stmt = $link->prepare("SELECT * FROM `users` WHERE email = ?");
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows == 0) {
             // If the email doesn't exist, hash the password and insert the user into the database
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $link->prepare("INSERT INTO `users` (email, password, name, username, reset_token, verify_token) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssss", $email, $hashed_password, $name, $username, $reset_token, $verify_token);
+            $stmt = $link->prepare("INSERT INTO `users` (email, password, name, reset_token, verify_token) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssss", $email, $hashed_password, $name, $reset_token, $verify_token);
             $stmt->execute();
 
             // Log the user in and redirect to the dashboard page
@@ -80,8 +79,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300;600;800&display=swap" rel="stylesheet">
 
-        <title>Registreer || Remote Reizen</title>
-        <?php echo '<link rel="stylesheet" href="'.$path.'files/styles.css">' ?>
+        <?php echo '<title>' . ucfirst($page['name']) . ' | ' . $site['name'] . '</title>' ?>
+        <?php echo '<link rel="stylesheet" href="'.$path.'files/styles/styles.css">' ?>
+        <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
     </head>
     
     <body>
@@ -112,10 +112,6 @@
                         <div>
                             <h3>Naam</h3>
                             <input type="text" name="name" required>
-                        </div>
-                        <div>
-                            <h3>Gebruikers Naam</h3>
-                            <input type="text" name="username" required>
                         </div>
                         <div>
                             <h4>Wachtwoord</h4>
