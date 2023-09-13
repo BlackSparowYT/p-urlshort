@@ -5,10 +5,6 @@
     $page['path_lvl'] = 2;
     require_once("../files/components/account-setting.php");
 
-
-    
-    require($path."files/mail-config.php");
-
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
