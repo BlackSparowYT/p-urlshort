@@ -1,6 +1,6 @@
 <?php
 
-    $page['name'] = "forgot-pass";
+    $page['name'] = "forgot_pass";
     $page['cat'] = "account";
     $page['path_lvl'] = 2;
     require_once("../files/components/account-setting.php");
@@ -90,7 +90,7 @@
         $result = mysqli_fetch_assoc($is_run);
         $reset_token = $result['reset_token'];
 
-        $emaillink = $site['url']."/account/forgot-pass.php?action=reset&token=".$reset_token;
+        $emaillink = $site['url']."account/forgot-pass.php?action=reset&token=".$reset_token;
         $onderwerp = "Wachtwoord Vergeten";
         $inhoud = "Gebruik deze link om je wachtwoord te reseten ".$emaillink."\nHeb jij dit niet aangevraagd neem dan direct contact op met onze help desk!".$site['url']."/contact.php\n\nGroeten,\nRemote Reizen";
 
